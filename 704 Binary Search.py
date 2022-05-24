@@ -7,7 +7,7 @@ class Solution:
         lower = 0
         upper = n-1
         while lower <= upper:
-            mid = int(lower + (upper-lower)/2)
+            mid = lower + (upper-lower)//2
             curr = nums[mid]
             if curr == target:
                 return mid
