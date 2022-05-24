@@ -7,11 +7,11 @@ class Solution:
         lower = 0
         upper = n-1
         # binary search
-        while lower+1 < upper:
-            mid = int(lower + (upper-lower)/2)
+        while lower <= upper:
+            mid = lower + (upper-lower)//2
             curr = letters[mid]
-            if curr <= target:
-                lower = mid
+            if target < curr:
+                upper = mid - 1
             else:
-                upper = mid
-        return letters[upper]
+                lower = mid + 1
+        return letters[lower]
