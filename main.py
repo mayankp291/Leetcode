@@ -14,3 +14,17 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+# memoization for fibonacci series, values are stored in array
+# Time O(n)
+
+def fib (n):
+  if F[n] != -1:
+    return F[n]
+  if n <= 1:
+    return n
+  F[n] = fib(n-1) + fib(n-2)
+  return F[n]
+n = 6
+F = [-1] * (n+1)
+print(fib(6))
